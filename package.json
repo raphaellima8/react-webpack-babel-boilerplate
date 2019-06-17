@@ -1,6 +1,6 @@
 {
   "name": "react-webpack-babel-boilerplate",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "A simple React, Webpack and Babel boilerplate",
   "main": "index.js",
   "author": "Raphael Lima <raphael.aolima8@gmail.com>",
