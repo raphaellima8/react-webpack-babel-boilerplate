@@ -1,22 +1,22 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 
-import Input from './Input.js';
+import Input from './Input';
 
 test('Test Input Component', () => {
   const component = shallow(
-    <Input 
+    <Input
       text="Example text"
       label="example_text"
       type="text"
       id="example_text"
       value="value test"
-      handleChange={ () => 'ok' }
+      handleChange={() => 'ok'}
     />
   );
-  
+
   expect(component.text()).toEqual('Example text');
   expect(component.type()).toEqual('div');
-  
+
   expect(component).toMatchSnapshot();
 });

@@ -1,15 +1,14 @@
 import React, { Component } from 'react';
-import ReactDOM from 'react-dom';
 
-import Input from '../presentational/Input.js';
+import Input from '../presentational/Input';
 
 class FormContainer extends Component {
   constructor() {
     super();
-    
+
     this.state = {
       title: ''
-    }
+    };
 
     this.handleChange = this.handleChange.bind(this);
   }
@@ -21,13 +20,13 @@ class FormContainer extends Component {
   render() {
     return (
       <form id="article-form">
-        <Input 
+        <Input
           text="Example text"
           label="example_text"
           type="text"
           id="example_text"
-          value={ this.state.title }
-          handleChange={ this.handleChange }
+          value={this.state.title}
+          handleChange={this.handleChange}
         />
       </form>
     );

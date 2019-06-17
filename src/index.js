@@ -1,6 +1,5 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import App from './App';
 
-import FormContainer from './js/components/container/FormContainer.js';
-
-ReactDOM.render(<FormContainer />, document.getElementById("create-article-form"));
+ReactDOM.render(<App />, document.getElementById('create-article-form'));
