@@ -237,7 +237,7 @@ class Paginator extends Component {
 
     return (
       <PaginatorContainer>
-        <PaginatorArrowContainer disabled={currentPage > firstPage}>
+        <PaginatorArrowContainer disabled={currentPage === firstPage}>
           <PaginatorIcon
             role="link"
             tabIndex="0"
