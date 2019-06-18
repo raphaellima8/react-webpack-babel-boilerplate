@@ -1,4 +1,5 @@
 import React from 'react';
+import { connect } from 'react-redux';
 import styled from 'styled-components';
 
 import Paragraph from '../../../../components/presentational/Paragraph';
@@ -36,4 +37,11 @@ const SearchResult = ({ text, amountDocs }) => {
   );
 };
 
-export default SearchResult;
+const mapStateToProps = state => {
+  return {
+    amountDocs: state.productsPage.amountDocs,
+    text: '{amount} produtos encontrados'
+  };
+};
+
+export default connect(mapStateToProps)(SearchResult);

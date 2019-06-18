@@ -20,30 +20,7 @@ const ExtendedProductItemContainer = styled(ProductItemContainer)`
 const ProductItem = ({ productItem }) => {
   return (
     <ExtendedProductItemContainer>
-      <Gallery
-        imageList={[
-          {
-            id: '4qwd',
-            src:
-              'https://images.enxovaisdovale.com.br/images/produtos/mix_lencol1_20160630__g.jpg'
-          },
-          {
-            id: '4qwd',
-            src:
-              'https://images.enxovaisdovale.com.br/images/produtos/mix_lencol1_20160630__g.jpg'
-          },
-          {
-            id: '4qwd',
-            src:
-              'https://images.enxovaisdovale.com.br/images/produtos/mix_lencol1_20160630__g.jpg'
-          },
-          {
-            id: '4qwd',
-            src:
-              'https://images.enxovaisdovale.com.br/images/produtos/mix_lencol1_20160630__g.jpg'
-          }
-        ]}
-      />
+      <Gallery imageList={productItem.images} />
       <Description data={productItem} />
     </ExtendedProductItemContainer>
   );

@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 import styled from 'styled-components';
+
+import { fetchProducts, setItemsPerPage } from '../../../actions';
 
 const Select = styled.select`
   width: 100%;
@@ -13,6 +16,11 @@ const Select = styled.select`
   }
 `;
 
+const mapStateToProps = state => {
+  const { itemsPerPage } = state;
+  return { itemsPerPage: itemsPerPage || 5, text: 'produtos por página' };
+};
+
 export class SelectItemsPerPage extends Component {
   constructor() {
     super();
@@ -20,7 +28,7 @@ export class SelectItemsPerPage extends Component {
   }
 
   componentDidMount() {
-    // this.props.fetchProducts();
+    this.props.fetchProducts();
   }
 
   componentDidUpdate() {
@@ -46,4 +54,10 @@ export class SelectItemsPerPage extends Component {
   }
 }
 
-export default SelectItemsPerPage;
+export default connect(
+  mapStateToProps,
+  {
+    setItemsPerPage,
+    fetchProducts
+  }
+)(SelectItemsPerPage);

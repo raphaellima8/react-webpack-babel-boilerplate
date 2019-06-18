@@ -1,4 +1,5 @@
 import React from 'react';
+import { connect } from 'react-redux';
 import styled from 'styled-components';
 
 const SectionHeaderContainer = styled.div`
@@ -24,4 +25,10 @@ const SectionHeader = ({ title }) => (
   </SectionHeaderContainer>
 );
 
-export default SectionHeader;
+const mapStateToProps = state => {
+  return {
+    title: state.searchTerm || 'Lista de produtos'
+  };
+};
+
+export default connect(mapStateToProps)(SectionHeader);

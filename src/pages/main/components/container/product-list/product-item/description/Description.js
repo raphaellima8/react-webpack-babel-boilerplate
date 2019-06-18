@@ -66,16 +66,17 @@ class Description extends Component {
   }
 
   render() {
+    const { category, type, name, price, promotionalPrice } = this.props.data;
     return (
       <DescriptionContainer>
         <ProductDescriptionContainer>
-          <HeadText>TESTE</HeadText>
-          <CustomParagraph text="CATEGORIA TYPE" />
+          <HeadText>{name}</HeadText>
+          <CustomParagraph text={`${category} ${type}`} />
         </ProductDescriptionContainer>
         <ProductPriceContainer>
-          <ProductPrice text="R$ 300,00" />
+          <ProductPrice text={this.setMoneyMask(price)} />
           <CustomParagraph text="por" />
-          {this.renderPromotionalPrice(200)}
+          {this.renderPromotionalPrice(promotionalPrice)}
         </ProductPriceContainer>
       </DescriptionContainer>
     );

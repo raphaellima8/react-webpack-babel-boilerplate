@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 
 import ProductItem from './product-item/ProductItem';
 
@@ -11,14 +12,14 @@ class ProductList extends Component {
   }
 
   render() {
-    return (
-      <div>
-        <ProductItem>OI</ProductItem>
-        <ProductItem>OI</ProductItem>
-      </div>
-    );
-    // return <div>{this.parseList()}</div>;
+    return <div>{this.parseList()}</div>;
   }
 }
 
-export default ProductList;
+const mapStateToProps = state => {
+  return {
+    products: state.productsPage.products
+  };
+};
+
+export default connect(mapStateToProps)(ProductList);

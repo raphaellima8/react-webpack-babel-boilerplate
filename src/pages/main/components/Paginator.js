@@ -1,5 +1,22 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+
 import styled, { css } from 'styled-components';
+
+import { fetchProducts, currentPaginatorPage } from '../../../actions';
+
+const mapStateToProps = state => {
+  return {
+    ...state.productsPage
+  };
+};
+
+const mapDispatchToProps = dispatch => {
+  return {
+    nextPage: () => dispatch(fetchProducts()),
+    setPage: pageNumber => dispatch(currentPaginatorPage(pageNumber))
+  };
+};
 
 const PaginatorContainer = styled.div`
   width: 100%;
@@ -254,4 +271,7 @@ class Paginator extends Component {
   }
 }
 
-export default Paginator;
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(Paginator);

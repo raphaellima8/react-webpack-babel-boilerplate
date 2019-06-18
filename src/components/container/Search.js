@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
+import { connect } from 'react-redux';
+import { fetchProducts, searchTerm } from '../../actions';
 
 import Input from '../presentational/Input';
 
@@ -46,7 +48,7 @@ class Search extends Component {
   render() {
     return (
       <SearchContainer>
-        <FormContainer>
+        <FormContainer onSubmit={this.onFormSubmit}>
           <SearchIcon className="fa fa-search" />
           <Input
             type="search"
@@ -61,4 +63,16 @@ class Search extends Component {
   }
 }
 
-export default Search;
+const mapStateToProps = state => {
+  return {
+    term: state.searchTerm
+  };
+};
+
+export default connect(
+  mapStateToProps,
+  {
+    fetchProducts,
+    searchTerm
+  }
+)(Search);
