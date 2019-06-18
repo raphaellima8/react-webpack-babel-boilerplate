@@ -1,0 +1,42 @@
+.product__description-container {
+  margin-top: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+  h3,
+  p {
+    text-align: left;
+    margin: 0;
+  }
+
+  @media (min-width: 600px) {
+    width: 60%;
+    padding-left: 1rem;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .product__description {
+    p {
+      color: gray;
+    }
+  }
+
+  .product__price-container {
+    > p {
+      display: inline-block;
+      margin-right: 0.4rem;
+      color: grey;
+    }
+
+    .product__price {
+      text-decoration-line: line-through;
+    }
+
+    .product__promotional-price {
+      color: black;
+    }
+  }
+}
