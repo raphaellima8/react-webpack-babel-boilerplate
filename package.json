@@ -8,6 +8,7 @@
   "private": false,
   "scripts": {
     "start": "webpack-dev-server --open --mode development",
+    "start:prod": "serve -s dist",
     "build": "webpack --mode production",
     "test": "jest",
     "release": "standard-version",
@@ -24,6 +25,7 @@
     "react-redux": "^7.1.0",
     "redux": "^4.0.1",
     "redux-thunk": "^2.3.0",
+    "serve": "^11.0.1",
     "styled-components": "^4.3.1"
   },
   "devDependencies": {
