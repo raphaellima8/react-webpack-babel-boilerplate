@@ -1,10 +1,15 @@
 import React from 'react';
-import FormContainer from './js/components/container/FormContainer';
+import styled from 'styled-components';
+import Header from './components/presentational/Header';
+
+const AppContainer = styled.div`
+  padding-bottom: 3rem;
+`;
 
 const App = () => (
-  <div className="App">
-    <FormContainer />
-  </div>
+  <AppContainer>
+    <Header />
+  </AppContainer>
 );
 
 export default App;
