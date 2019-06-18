@@ -1,7 +1,7 @@
 import React from 'react';
 import styled, { css } from 'styled-components';
 
-const StyledInput = styled.input`
+const StyledInput = styled.input.attrs(({ type }) => type)`
   ${({ removeDefaultStyle }) =>
     removeDefaultStyle
       ? css`
