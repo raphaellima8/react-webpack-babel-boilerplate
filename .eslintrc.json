@@ -23,7 +23,7 @@
         "extensions": [".js", ".jsx"]
       }
     ],
-    "react/prop-types": ["disabled"],
+    "react/prop-types": ["enabled"],
     "linebreak-style": 0,
     "global-require": 0,
     "eslint linebreak-style": [0, "error", "windows"],
@@ -36,6 +36,7 @@
     "no-shadow": "error",
     "class-methods-use-this": "off",
     "no-plusplus": "off",
-    "jsx-a11y/click-events-have-key-events": 0
+    "jsx-a11y/click-events-have-key-events": 0,
+    "react/jsx-boolean-value": false
   }
 }

@@ -38,10 +38,26 @@ const currentPaginatorPage = page => {
   };
 };
 
+const selectedImage = imageSrc => {
+  return {
+    type: 'SELECT_IMAGE',
+    payload: imageSrc
+  };
+};
+
+const toggleModal = isOpen => {
+  return {
+    type: 'TOGGLE_MODAL',
+    payload: isOpen
+  };
+};
+
 export {
   fetchProducts,
   setItemsPerPage,
   searchTerm,
   mountProductList,
-  currentPaginatorPage
+  currentPaginatorPage,
+  selectedImage,
+  toggleModal
 };

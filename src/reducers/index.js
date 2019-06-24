@@ -19,9 +19,25 @@ const productsPage = (state = initialState, action) => {
   return state;
 };
 
+const imageToEnlarge = (state = '', action) => {
+  if (action.type === 'SELECT_IMAGE') {
+    return action.payload;
+  }
+  return state;
+};
+
+const modalState = (state = false, action) => {
+  if (action.type === 'TOGGLE_MODAL') {
+    return action.payload;
+  }
+  return state;
+};
+
 export default combineReducers({
   itemsPerPage,
   productsPage,
   searchTerm,
-  paginator
+  paginator,
+  imageToEnlarge,
+  modalState
 });

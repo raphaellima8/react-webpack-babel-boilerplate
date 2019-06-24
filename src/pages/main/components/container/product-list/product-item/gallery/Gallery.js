@@ -1,7 +1,9 @@
 import React from 'react';
 import styled from 'styled-components';
+import { useDispatch } from 'react-redux';
 
-import Thumbnail from '../../../../../../../components/presentational/Thumbnail';
+import Image from '../../../../../../../components/presentational/Image';
+import { selectedImage, toggleModal } from '../../../../../../../actions';
 
 const GalleryContainer = styled.div`
   display: flex;
@@ -17,13 +19,25 @@ const GalleryContainer = styled.div`
   }
 `;
 
-const Gallery = ({ imageList }) => (
-  <GalleryContainer>{parseItems(imageList)}</GalleryContainer>
-);
+let dispatchFn;
 
-const parseItems = imageList => {
+const Gallery = ({ imageList }) => {
+  dispatchFn = useDispatch();
+  return (
+    <GalleryContainer>
+      {parseItems(imageList, sendImageSrcToStore)}
+    </GalleryContainer>
+  );
+};
+
+const sendImageSrcToStore = imageSrc => {
+  dispatchFn(selectedImage(imageSrc));
+  dispatchFn(toggleModal(true));
+};
+
+const parseItems = (imageList, clickCb) => {
   return imageList.map(({ id, src }) => (
-    <Thumbnail key={id} imgAddress={src} />
+    <Image key={id} imgAddress={src} clickCb={clickCb} />
   ));
 };
 
