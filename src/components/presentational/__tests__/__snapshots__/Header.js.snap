@@ -1,0 +1,259 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Header Component tests Should mount full component with its children 1`] = `
+<Provider
+  store={
+    Object {
+      "clearActions": [Function],
+      "dispatch": [Function],
+      "getActions": [Function],
+      "getState": [Function],
+      "replaceReducer": [Function],
+      "subscribe": [Function],
+    }
+  }
+>
+  <Header>
+    <Header__HeaderContainer>
+      <StyledComponent
+        forwardedComponent={
+          Object {
+            "$$typeof": Symbol(react.forward_ref),
+            "attrs": Array [],
+            "componentStyle": ComponentStyle {
+              "componentId": "Header__HeaderContainer-sc-1r7szyg-0",
+              "isStatic": true,
+              "lastClassName": "fBooYB",
+              "rules": Array [
+                "margin:0.3rem;display:flex;justify-content:space-between;padding:0 1rem;align-items:center;",
+              ],
+            },
+            "displayName": "Header__HeaderContainer",
+            "foldedComponentIds": Array [],
+            "render": [Function],
+            "styledComponentId": "Header__HeaderContainer-sc-1r7szyg-0",
+            "target": "header",
+            "toString": [Function],
+            "warnTooManyClasses": [Function],
+            "withComponent": [Function],
+          }
+        }
+        forwardedRef={null}
+      >
+        <header
+          className="Header__HeaderContainer-sc-1r7szyg-0 fBooYB"
+        >
+          <Title
+            text="mmartan"
+          >
+            <Title__HeaderTitle>
+              <StyledComponent
+                forwardedComponent={
+                  Object {
+                    "$$typeof": Symbol(react.forward_ref),
+                    "attrs": Array [],
+                    "componentStyle": ComponentStyle {
+                      "componentId": "Title__HeaderTitle-gfyb9e-0",
+                      "isStatic": true,
+                      "lastClassName": "eBXNOe",
+                      "rules": Array [
+                        "margin:0;font-size:1rem;@media (min-width:600px){font-size:2rem;}",
+                      ],
+                    },
+                    "displayName": "Title__HeaderTitle",
+                    "foldedComponentIds": Array [],
+                    "render": [Function],
+                    "styledComponentId": "Title__HeaderTitle-gfyb9e-0",
+                    "target": "h1",
+                    "toString": [Function],
+                    "warnTooManyClasses": [Function],
+                    "withComponent": [Function],
+                  }
+                }
+                forwardedRef={null}
+              >
+                <h1
+                  className="Title__HeaderTitle-gfyb9e-0 eBXNOe"
+                >
+                  mmartan
+                </h1>
+              </StyledComponent>
+            </Title__HeaderTitle>
+          </Title>
+          <Connect(Search)>
+            <Search
+              fetchProducts={[Function]}
+              searchTerm={[Function]}
+            >
+              <Search__SearchContainer>
+                <StyledComponent
+                  forwardedComponent={
+                    Object {
+                      "$$typeof": Symbol(react.forward_ref),
+                      "attrs": Array [],
+                      "componentStyle": ComponentStyle {
+                        "componentId": "Search__SearchContainer-sc-197687-0",
+                        "isStatic": true,
+                        "lastClassName": "gqsWtM",
+                        "rules": Array [
+                          "display:flex;border:1px solid #ccc;border-radius:15px;overflow:hidden;align-self:center;width:10rem;@media (min-width:600px){width:30rem;}",
+                        ],
+                      },
+                      "displayName": "Search__SearchContainer",
+                      "foldedComponentIds": Array [],
+                      "render": [Function],
+                      "styledComponentId": "Search__SearchContainer-sc-197687-0",
+                      "target": "div",
+                      "toString": [Function],
+                      "warnTooManyClasses": [Function],
+                      "withComponent": [Function],
+                    }
+                  }
+                  forwardedRef={null}
+                >
+                  <div
+                    className="Search__SearchContainer-sc-197687-0 gqsWtM"
+                  >
+                    <Search__FormContainer
+                      onSubmit={[Function]}
+                    >
+                      <StyledComponent
+                        forwardedComponent={
+                          Object {
+                            "$$typeof": Symbol(react.forward_ref),
+                            "attrs": Array [],
+                            "componentStyle": ComponentStyle {
+                              "componentId": "Search__FormContainer-sc-197687-1",
+                              "isStatic": true,
+                              "lastClassName": "fOwEZy",
+                              "rules": Array [
+                                "width:100%;display:flex;align-items:baseline;",
+                              ],
+                            },
+                            "displayName": "Search__FormContainer",
+                            "foldedComponentIds": Array [],
+                            "render": [Function],
+                            "styledComponentId": "Search__FormContainer-sc-197687-1",
+                            "target": "form",
+                            "toString": [Function],
+                            "warnTooManyClasses": [Function],
+                            "withComponent": [Function],
+                          }
+                        }
+                        forwardedRef={null}
+                        onSubmit={[Function]}
+                      >
+                        <form
+                          className="Search__FormContainer-sc-197687-1 fOwEZy"
+                          onSubmit={[Function]}
+                        >
+                          <Search__SearchIcon
+                            className="fa fa-search"
+                          >
+                            <StyledComponent
+                              className="fa fa-search"
+                              forwardedComponent={
+                                Object {
+                                  "$$typeof": Symbol(react.forward_ref),
+                                  "attrs": Array [],
+                                  "componentStyle": ComponentStyle {
+                                    "componentId": "Search__SearchIcon-sc-197687-2",
+                                    "isStatic": true,
+                                    "lastClassName": "cuwNqn",
+                                    "rules": Array [
+                                      "padding:0.5rem;",
+                                    ],
+                                  },
+                                  "displayName": "Search__SearchIcon",
+                                  "foldedComponentIds": Array [],
+                                  "render": [Function],
+                                  "styledComponentId": "Search__SearchIcon-sc-197687-2",
+                                  "target": "i",
+                                  "toString": [Function],
+                                  "warnTooManyClasses": [Function],
+                                  "withComponent": [Function],
+                                }
+                              }
+                              forwardedRef={null}
+                            >
+                              <i
+                                className="fa fa-search Search__SearchIcon-sc-197687-2 cuwNqn"
+                              />
+                            </StyledComponent>
+                          </Search__SearchIcon>
+                          <Input
+                            onInputChange={[Function]}
+                            placeholder="Buscar produto"
+                            removeDefaultStyle={true}
+                            type="search"
+                          >
+                            <Input__StyledInput
+                              onChange={[Function]}
+                              placeholder="Buscar produto"
+                              removeDefaultStyle={true}
+                              type="search"
+                            >
+                              <StyledComponent
+                                forwardedComponent={
+                                  Object {
+                                    "$$typeof": Symbol(react.forward_ref),
+                                    "attrs": Array [
+                                      [Function],
+                                    ],
+                                    "componentStyle": ComponentStyle {
+                                      "componentId": "Input__StyledInput-sc-1wkleg0-0",
+                                      "isStatic": false,
+                                      "lastClassName": "dAkpPH",
+                                      "rules": Array [
+                                        [Function],
+                                        ";",
+                                      ],
+                                    },
+                                    "displayName": "Input__StyledInput",
+                                    "foldedComponentIds": Array [],
+                                    "render": [Function],
+                                    "styledComponentId": "Input__StyledInput-sc-1wkleg0-0",
+                                    "target": "input",
+                                    "toString": [Function],
+                                    "warnTooManyClasses": [Function],
+                                    "withComponent": [Function],
+                                  }
+                                }
+                                forwardedRef={null}
+                                onChange={[Function]}
+                                placeholder="Buscar produto"
+                                removeDefaultStyle={true}
+                                type="search"
+                              >
+                                <input
+                                  className="Input__StyledInput-sc-1wkleg0-0 dAkpPH"
+                                  onChange={[Function]}
+                                  placeholder="Buscar produto"
+                                  type="search"
+                                />
+                              </StyledComponent>
+                            </Input__StyledInput>
+                          </Input>
+                        </form>
+                      </StyledComponent>
+                    </Search__FormContainer>
+                  </div>
+                </StyledComponent>
+              </Search__SearchContainer>
+            </Search>
+          </Connect(Search)>
+        </header>
+      </StyledComponent>
+    </Header__HeaderContainer>
+  </Header>
+</Provider>
+`;
+
+exports[`Header Component tests Should render shallow component without its children 1`] = `
+<Header__HeaderContainer>
+  <Title
+    text="mmartan"
+  />
+  <Connect(Search) />
+</Header__HeaderContainer>
+`;

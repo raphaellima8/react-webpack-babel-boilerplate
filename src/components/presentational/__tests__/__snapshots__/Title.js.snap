@@ -1,0 +1,26 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Test styled component Match style rules snapshot 1`] = `
+.c0 {
+  margin: 0;
+  font-size: 1rem;
+}
+
+@media (min-width:600px) {
+  .c0 {
+    font-size: 2rem;
+  }
+}
+
+<h1
+  className="c0"
+>
+  texto teste
+</h1>
+`;
+
+exports[`Title Component tests Should render component with received props 1`] = `
+<Title__HeaderTitle>
+  texto teste
+</Title__HeaderTitle>
+`;

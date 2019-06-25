@@ -1,3 +1,21 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Test Input Component 1`] = `ShallowWrapper {}`;
+exports[`Test Input Component 1`] = `
+<div
+  className="form-group"
+>
+  <label
+    htmlFor="example_text"
+  >
+    Example text
+  </label>
+  <input
+    className="form-control"
+    id="example_text"
+    onChange={[Function]}
+    required={true}
+    type="text"
+    value="value test"
+  />
+</div>
+`;
