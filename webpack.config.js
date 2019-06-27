@@ -9,12 +9,12 @@ module.exports = {
       cacheGroups: {
         commons: {
           test: /[\\/]node_modules[\\/]/,
-          name: "vendor",
-          chunks: "initial",
-          minChunks: 2,
-        },
-      },
-    },
+          name: 'vendor',
+          chunks: 'initial',
+          minChunks: 2
+        }
+      }
+    }
   },
   module: {
     rules: [
@@ -41,4 +41,4 @@ module.exports = {
       filename: './index.html'
     })
   ]
-}
+};
