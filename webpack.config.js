@@ -9,7 +9,10 @@ module.exports = {
     publicPath: '/'
   },
   devServer: {
-    historyApiFallback: true
+    historyApiFallback: true,
+    stats: {
+      children: false
+    }
   },
   mode: 'production',
   optimization: {
@@ -48,7 +51,7 @@ module.exports = {
   plugins: [
     new HtmlWebpackPlugin({
       template: './public/index.html',
-      filename: './index.html'
+      filename: 'index.html'
     })
   ]
 };

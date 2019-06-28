@@ -1,11 +1,12 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import { createPortal } from 'react-dom';
 import styled from 'styled-components';
 import { useSelector, useDispatch } from 'react-redux';
 import { toggleModal } from '../../actions';
 import Image from './Image';
 
 const Overlay = styled.div`
-  display: ${({ hideModal }) => (hideModal ? 'flex' : 'none')};
+  display: flex;
   position: fixed;
   top: 0;
   right: 0;
@@ -43,34 +44,40 @@ const DialogBox = styled.div`
   }
 `;
 
+const modalRoot = document.getElementById('modal-root');
+
 const Modal = () => {
-  const storeData = useSelector(({ modalState, imageToEnlarge }) => ({
-    modalState,
-    imageToEnlarge
-  }));
+  const element = document.createElement('div');
+  const { modalState, imageToEnlarge } = useSelector(state => state);
   const dispatch = useDispatch();
-  return (
-    <Overlay hideModal={storeData.modalState}>
-      <DialogBox>
-        <div className="modal-header">
-          <i
-            className="fa fa-times"
-            aria-hidden="true"
-            onClick={() => {
-              dispatch(toggleModal(false));
-            }}
-          />
-        </div>
-        <div className="modal-body">
-          <Image
-            imgAddress={storeData.imageToEnlarge}
-            fullSize={true}
-            alt="Imagem"
-          />
-        </div>
-      </DialogBox>
-    </Overlay>
-  );
+
+  useEffect(() => {
+    modalRoot.appendChild(element);
+    return function unmountComponent() {
+      modalRoot.removeChild(element);
+    };
+  });
+
+  return !modalState
+    ? null
+    : createPortal(
+        // eslint-disable-next-line react/jsx-indent
+        <Overlay>
+          <DialogBox>
+            <div className="modal-header">
+              <i
+                className="fa fa-times"
+                aria-hidden="true"
+                onClick={() => dispatch(toggleModal(false))}
+              />
+            </div>
+            <div className="modal-body">
+              <Image imgAddress={imageToEnlarge} fullSize={true} alt="Imagem" />
+            </div>
+          </DialogBox>
+        </Overlay>,
+        element
+      );
 };
 
 export default Modal;
