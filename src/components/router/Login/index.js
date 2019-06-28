@@ -16,11 +16,11 @@ const LoginBox = styled.div`
   display: flex;
   flex-direction: column;
   @media screen and (min-width: 600px) {
-    width: 300px;
+    width: 30rem;
     height: 50%;
-    padding: 5px 15px;
-    border-radius: 2px;
-    border: 1px solid;
+    padding: 0.5rem 1.5rem;
+    border-radius: 0.16rem;
+    border: 0.8rem solid;
     position: absolute;
     left: 0;
     right: 0;
@@ -36,10 +36,10 @@ const InputWrapper = styled.div`
   display: flex;
   overflow: hidden;
   align-self: center;
-  border-radius: 4px;
-  padding: 1px 16px;
-  border: #2980b9 2px solid;
-  margin-bottom: 20px;
+  border-radius: 0.32rem;
+  padding: 0.8rem 1.6rem;
+  border: #2980b9 0.16rem solid;
+  margin-bottom: 2rem;
 `;
 
 const BoxHeader = styled.section`
@@ -52,9 +52,9 @@ const LoginButton = styled.button`
   width: 100%;
   margin: 0;
   border: none;
-  height: 30px;
+  height: 3rem;
   background: #3498db;
-  border-radius: 4px;
+  border-radius: 0.32rem;
   color: white;
   font-size: 1rem;
   font-weight: bold;

@@ -10,7 +10,6 @@ const DescriptionContainer = styled.div`
   align-items: flex-start;
   width: 100%;
   @media (min-width: 600px) {
-    width: 60%;
     padding-left: 1rem;
     flex-direction: row;
     justify-content: space-between;
@@ -34,10 +33,12 @@ const ProductPriceContainer = styled.div`
 
 const ProductPrice = styled(Paragraph)`
   text-decoration-line: line-through;
+  margin-top: 0;
 `;
 
 const PromotionalProductPrice = styled(Paragraph)`
   && {
+    margin-top: 0;
     color: black;
   }
 `;

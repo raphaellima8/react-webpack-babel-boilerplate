@@ -1,20 +1,16 @@
 import React from 'react';
-import Modal from '../../presentational/Modal';
-import Header from '../../presentational/Header';
+
+import PageContainer from '../../container/PageContainer';
 import SearchResult from '../../presentational/SearchResult';
 import SearchFooter from '../../presentational/SearchFooter';
 import SectionHeader from '../../presentational/SectionHeader';
 
 const HomePage = () => (
-  <div>
-    <Modal />
-    <Header />
-    <main>
-      <SectionHeader />
-      <SearchResult />
-      <SearchFooter />
-    </main>
-  </div>
+  <PageContainer>
+    <SectionHeader />
+    <SearchResult />
+    <SearchFooter />
+  </PageContainer>
 );
 
 export default HomePage;

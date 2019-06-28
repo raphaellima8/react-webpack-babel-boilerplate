@@ -7,8 +7,8 @@ import Input from '../presentational/Input';
 
 const SearchContainer = styled.div`
   display: flex;
-  border: 1px solid #ccc;
-  border-radius: 15px;
+  border: 0.08rem solid #ccc;
+  border-radius: 1.5rem;
   overflow: hidden;
   align-self: center;
   width: 10rem;

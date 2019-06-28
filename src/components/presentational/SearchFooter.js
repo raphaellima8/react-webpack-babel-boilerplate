@@ -9,7 +9,7 @@ const SearchFooterContainer = styled.section`
     flex-direction: row;
     justify-content: space-between;
   }
-  margin: 20px auto 0 auto;
+  margin: 2rem auto 0 auto;
   width: 80%;
   display: flex;
   flex-direction: column;

@@ -7,7 +7,7 @@ import Paragraph from './Paragraph';
 import ProductList from '../container/ProductList';
 
 const SearchResultContainer = styled.div`
-  margin: 20px auto 0 auto;
+  margin: 2rem auto 0 auto;
   width: 80%;
 `;
 
