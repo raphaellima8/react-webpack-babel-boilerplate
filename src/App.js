@@ -2,8 +2,8 @@ import React from 'react';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 import styled from 'styled-components';
 
-import Main from './pages/main/Main';
 import Login from './components/router/Login';
+import HomePage from './components/router/Home';
 
 const AppContainer = styled.div`
   padding-bottom: 3rem;
@@ -12,7 +12,7 @@ const AppContainer = styled.div`
 const App = () => (
   <Router>
     <AppContainer>
-      <Route path="/" exact component={Main} />
+      <Route path="/" exact component={HomePage} />
       <Route path="/login" component={Login} />
     </AppContainer>
   </Router>

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
-import Paragraph from '../../../../../../../components/presentational/Paragraph';
+
+import Paragraph from './Paragraph';
 
 const DescriptionContainer = styled.div`
   margin-top: 0.5rem;

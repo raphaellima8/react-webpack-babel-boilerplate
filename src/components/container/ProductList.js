@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
-import ProductItem from './product-item/ProductItem';
+import ProductItem from '../presentational/ProductItem';
 
 class ProductList extends Component {
   parseList() {

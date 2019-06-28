@@ -1,8 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import SelectItemsPerPage from '../SelectItemsPerPage';
-import Paginator from '../Paginator';
+import Paginator from './Paginator';
+import SelectItemsPerPage from './SelectItemsPerPage';
 
 const SearchFooterContainer = styled.section`
   @media (min-width: 600px) {

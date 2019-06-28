@@ -2,8 +2,8 @@ import React from 'react';
 import styled from 'styled-components';
 import { useDispatch } from 'react-redux';
 
-import Image from '../../../../../../../components/presentational/Image';
-import { selectedImage, toggleModal } from '../../../../../../../actions';
+import Image from '../presentational/Image';
+import { selectedImage, toggleModal } from '../../actions';
 
 const GalleryContainer = styled.div`
   display: flex;

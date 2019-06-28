@@ -2,9 +2,9 @@ import React from 'react';
 import { connect } from 'react-redux';
 import styled from 'styled-components';
 
-import Paragraph from '../../../../components/presentational/Paragraph';
-import Line from '../../../../components/presentational/Line';
-import ProductList from '../container/product-list/ProductList';
+import Line from './Line';
+import Paragraph from './Paragraph';
+import ProductList from '../container/ProductList';
 
 const SearchResultContainer = styled.div`
   margin: 20px auto 0 auto;
@@ -25,11 +25,7 @@ const SearchResult = ({ text, amountDocs }) => {
   return (
     <SearchResultContainer>
       <AmountItems>
-        <CustomText
-          text={'{amount} produtos encontrados'
-            .replace('{amount}', amountDocs)
-            .toUpperCase()}
-        />
+        <CustomText text={text.replace('{amount}', amountDocs).toUpperCase()} />
       </AmountItems>
       <ProductList />
       <Line />
@@ -37,9 +33,9 @@ const SearchResult = ({ text, amountDocs }) => {
   );
 };
 
-const mapStateToProps = state => {
+const mapStateToProps = ({ productsPage }) => {
   return {
-    amountDocs: state.productsPage.amountDocs,
+    amountDocs: productsPage.amountDocs,
     text: '{amount} produtos encontrados'
   };
 };

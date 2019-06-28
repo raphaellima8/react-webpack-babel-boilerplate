@@ -25,9 +25,9 @@ const SectionHeader = ({ title }) => (
   </SectionHeaderContainer>
 );
 
-const mapStateToProps = state => {
+const mapStateToProps = ({ searchTerm }) => {
   return {
-    title: state.searchTerm || 'Lista de produtos'
+    title: searchTerm || 'Lista de produtos'
   };
 };
 

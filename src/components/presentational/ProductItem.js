@@ -1,8 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import Gallery from './gallery/Gallery';
-import Description from './description/Description';
+import Description from './Description';
+import Gallery from '../container/Gallery';
 
 const ProductItemContainer = styled.section`
   display: flex;

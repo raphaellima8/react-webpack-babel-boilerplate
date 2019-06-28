@@ -3,11 +3,11 @@ import { connect } from 'react-redux';
 
 import styled, { css } from 'styled-components';
 
-import { fetchProducts, currentPaginatorPage } from '../../../actions';
+import { fetchProducts, currentPaginatorPage } from '../../actions';
 
-const mapStateToProps = state => {
+const mapStateToProps = ({ productsPage }) => {
   return {
-    ...state.productsPage
+    ...productsPage
   };
 };
 
@@ -47,9 +47,10 @@ const PaginatorArrowContainer = styled.div`
   }
 `;
 
-const PaginatorIcon = styled.i.attrs(({ role, tabIndex }) => {
-  return { role, tabIndex };
-})`
+const PaginatorIcon = styled.i.attrs(({ role, tabIndex }) => ({
+  role,
+  tabIndex
+}))`
   display: none;
   @media (min-width: 600px) {
     display: block;
