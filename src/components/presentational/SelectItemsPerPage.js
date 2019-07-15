@@ -2,15 +2,10 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import styled from 'styled-components';
 
+import Select from './Select';
 import { fetchProducts, setItemsPerPage } from '../../actions';
 
-const Select = styled.select`
-  width: 100%;
-  border-radius: 0.3rem;
-  padding: 0.5rem;
-  font-size: 1rem;
-  outline: none;
-
+const SelectContainer = styled(Select)`
   @media (min-width: 600px) {
     width: 20%;
   }
@@ -45,11 +40,11 @@ export class SelectItemsPerPage extends Component {
   render() {
     const { text, itemsPerPage } = this.props;
     return (
-      <Select onChange={this.optionSelected} value={itemsPerPage}>
+      <SelectContainer onChangeCb={this.optionSelected} value={itemsPerPage}>
         <option value="5">5 {text}</option>
         <option value="10">10 {text}</option>
         <option value="15">15 {text}</option>
-      </Select>
+      </SelectContainer>
     );
   }
 }

@@ -11,6 +11,13 @@ const fetchProducts = () => async (dispatch, getState) => {
   dispatch(mountProductList(result));
 };
 
+const fetchProduct = productId => async dispatch => {
+  const payload = await fetchData('api/v1/product/findOne', {
+    productId
+  });
+  dispatch(selectedProduct(payload.data.result));
+};
+
 const setItemsPerPage = amoutItems => {
   return {
     type: 'ITEMS_PER_PAGE',
@@ -52,6 +59,29 @@ const toggleModal = isOpen => {
   };
 };
 
+const selectedProduct = productData => ({
+  type: 'SELECT_PRODUCT',
+  payload: productData
+});
+
+const updateProductPrices = (wholeProduct, price, promotionalPrice) => {
+  return {
+    type: 'UPDATE_PRICES',
+    payload: {
+      ...wholeProduct,
+      newPrice: price,
+      newPromotionalPrice: promotionalPrice
+    }
+  };
+};
+
+const fetchDeadline = zipCode => async dispatch => {
+  dispatch({
+    type: 'DEADLINE',
+    payload: 4
+  });
+};
+
 export {
   fetchProducts,
   setItemsPerPage,
@@ -59,5 +89,9 @@ export {
   mountProductList,
   currentPaginatorPage,
   selectedImage,
-  toggleModal
+  toggleModal,
+  selectedProduct,
+  fetchProduct,
+  updateProductPrices,
+  fetchDeadline
 };

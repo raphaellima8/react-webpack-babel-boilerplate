@@ -11,6 +11,14 @@ const initialState = {
   products: []
 };
 
+const emptyProduct = {
+  name: '',
+  category: '',
+  price: 0,
+  promotionalPrice: 0,
+  images: []
+};
+
 const productsPage = (state = initialState, action) => {
   if (action.type === 'PRODUCT_LIST_INFO') {
     return action.payload;
@@ -33,11 +41,34 @@ const modalState = (state = false, action) => {
   return state;
 };
 
+const product = (state = emptyProduct, { type, payload }) => {
+  switch (type) {
+    case 'SELECT_PRODUCT':
+      return {
+        ...payload
+      };
+    case 'UPDATE_PRICES':
+      return {
+        ...payload,
+        price: payload.price,
+        promotionalPrice: payload.promotionalPrice
+      };
+    default:
+      return state;
+  }
+};
+
+const deadline = (state = {}, { type, payload }) => {
+  return type === 'DEADLINE' ? payload : state;
+};
+
 export default combineReducers({
   itemsPerPage,
   productsPage,
   searchTerm,
   paginator,
   imageToEnlarge,
-  modalState
+  modalState,
+  product,
+  deadline
 });

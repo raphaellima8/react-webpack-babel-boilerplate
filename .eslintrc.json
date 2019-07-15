@@ -29,7 +29,7 @@
     "eslint linebreak-style": [0, "error", "windows"],
     "import/no-named-as-default": true,
     "import/prefer-default-export": false,
-    "no-console": 0,
+    "no-console": "warn",
     "react/destructuring-assignment": 0,
     "react/jsx-one-expression-per-line": 0,
     "jsx-a11y/no-onchange": 0,

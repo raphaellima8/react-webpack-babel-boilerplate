@@ -12,6 +12,9 @@ module.exports = {
     historyApiFallback: true,
     stats: {
       children: false
+    },
+    overlay: {
+      errors: true
     }
   },
   mode: 'production',

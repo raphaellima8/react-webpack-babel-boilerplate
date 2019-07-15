@@ -1,7 +1,10 @@
-import React, { Component } from 'react';
+import React from 'react';
 import styled from 'styled-components';
+import { Link } from 'react-router-dom';
 
 import Paragraph from './Paragraph';
+import { selectedProduct } from '../../actions';
+import Price, { PromotionalPrice } from './Price';
 
 const DescriptionContainer = styled.div`
   margin-top: 0.5rem;
@@ -10,36 +13,37 @@ const DescriptionContainer = styled.div`
   align-items: flex-start;
   width: 100%;
   @media (min-width: 600px) {
+    width: 60%;
     padding-left: 1rem;
     flex-direction: row;
     justify-content: space-between;
-    align-items: center;
+    align-items: flex-start;
+  }
+  a {
+    color: black;
+    text-decoration: none;
+    :hover {
+      color: lightgray;
+      text-decoration: underline;
+    }
   }
 `;
 
 const ProductDescriptionContainer = styled.div`
+  display: inline-block;
   p {
     color: gray;
   }
 `;
 
 const ProductPriceContainer = styled.div`
+  display: flex;
+  align-items: flex-end;
   > p {
     display: inline-block;
     margin-right: 0.4rem;
+    margin-bottom: 0;
     color: grey;
-  }
-`;
-
-const ProductPrice = styled(Paragraph)`
-  text-decoration-line: line-through;
-  margin-top: 0;
-`;
-
-const PromotionalProductPrice = styled(Paragraph)`
-  && {
-    margin-top: 0;
-    color: black;
   }
 `;
 
@@ -53,36 +57,29 @@ const CustomParagraph = styled(Paragraph)`
   margin: 0;
 `;
 
-class Description extends Component {
-  setMoneyMask(value) {
-    const parsedValue = Number(value);
-    const v = !Number.isNaN(parsedValue) ? parsedValue : 0;
-    return v.toLocaleString('pt-BR', {
-      style: 'currency',
-      currency: 'BRL'
-    });
-  }
-
-  renderPromotionalPrice(value) {
-    return <PromotionalProductPrice text={this.setMoneyMask(value)} />;
-  }
-
-  render() {
-    const { category, type, name, price, promotionalPrice } = this.props.data;
-    return (
-      <DescriptionContainer>
+const Description = ({ data, dispatchFn }) => {
+  const { category, type, name, price, promotionalPrice, productId } = data;
+  return (
+    <DescriptionContainer>
+      <Link
+        to={{
+          pathname: `/product/detail`,
+          search: `?productId=${productId}`
+        }}
+        onClick={() => dispatchFn(selectedProduct(data))}
+      >
         <ProductDescriptionContainer>
           <HeadText>{name}</HeadText>
           <CustomParagraph text={`${category} ${type}`} />
         </ProductDescriptionContainer>
-        <ProductPriceContainer>
-          <ProductPrice text={this.setMoneyMask(price)} />
-          <CustomParagraph text="por" />
-          {this.renderPromotionalPrice(promotionalPrice)}
-        </ProductPriceContainer>
-      </DescriptionContainer>
-    );
-  }
-}
+      </Link>
+      <ProductPriceContainer>
+        <Price isPromotional={true} text={price} />
+        <CustomParagraph text="por" />
+        <PromotionalPrice text={promotionalPrice} />
+      </ProductPriceContainer>
+    </DescriptionContainer>
+  );
+};
 
 export default Description;

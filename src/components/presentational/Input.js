@@ -1,5 +1,6 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import styled, { css } from 'styled-components';
+import InputMask from 'react-input-mask';
 
 const StyledInput = styled.input.attrs(({ type }) => type)`
   ${({ removeDefaultStyle }) =>
@@ -11,6 +12,20 @@ const StyledInput = styled.input.attrs(({ type }) => type)`
           outline: none;
         `
       : css``};
+`;
+
+const ZipCodeFieldContainer = styled.div`
+  width: 100%;
+  display: flex;
+  input {
+    width: 80%;
+    border: none;
+    outline: none;
+    color: gray;
+  }
+  i {
+    margin: 1rem;
+  }
 `;
 
 const Input = ({
@@ -27,6 +42,26 @@ const Input = ({
     placeholder={placeholder}
     removeDefaultStyle={removeDefaultStyle}
   />
+);
+
+export const ZipCodeField = ({
+  fieldValue,
+  onChangeCb,
+  placeholder,
+  onBlurCb
+}) => (
+  <ZipCodeFieldContainer>
+    <i className="fa fa-truck" aria-hidden="true" />
+    <InputMask
+      mask="99999-999"
+      maskChar={null}
+      value={fieldValue}
+      onChange={onChangeCb}
+      placeholder={placeholder}
+      type="search"
+      onBlur={onBlurCb}
+    />
+  </ZipCodeFieldContainer>
 );
 
 export default Input;
