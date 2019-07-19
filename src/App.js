@@ -1,7 +1,8 @@
 import React from 'react';
-import { BrowserRouter as Router, Route } from 'react-router-dom';
 import styled from 'styled-components';
+import { Router, Route } from 'react-router-dom';
 
+import history from './history';
 import Login from './components/router/Login';
 import HomePage from './components/router/Home';
 import Product from './components/router/Product';
@@ -11,11 +12,11 @@ const AppContainer = styled.div`
 `;
 
 const App = () => (
-  <Router>
+  <Router history={history}>
     <AppContainer>
       <Route path="/" exact component={HomePage} />
       <Route path="/login" component={Login} />
-      <Route path="/product/detail" component={Product} />
+      <Route path="/product/detail/:productId" component={Product} />
     </AppContainer>
   </Router>
 );

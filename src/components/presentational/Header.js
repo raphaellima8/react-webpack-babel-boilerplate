@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import { Link } from 'react-router-dom';
 
 import Title from './Title';
 import Search from '../container/Search';
@@ -10,10 +11,23 @@ const HeaderContainer = styled.header`
   justify-content: space-between;
   padding: 0 1rem;
   align-items: center;
+  a {
+    text-decoration: none;
+    &:visited {
+      color: black;
+    }
+  }
 `;
+
 const Header = () => (
   <HeaderContainer>
-    <Title text="mmartan" />
+    <Link
+      to={{
+        pathname: `/`
+      }}
+    >
+      <Title text="mmartan" />
+    </Link>
     <Search />
   </HeaderContainer>
 );

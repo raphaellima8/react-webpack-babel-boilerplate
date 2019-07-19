@@ -115,7 +115,7 @@ class Login extends Component {
                 removeDefaultStyle={true}
               />
             </InputWrapper>
-            <LoginButton>OI</LoginButton>
+            <LoginButton>Entrar</LoginButton>
           </form>
         </LoginBox>
       </PageContainer>

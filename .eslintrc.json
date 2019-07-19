@@ -37,6 +37,7 @@
     "class-methods-use-this": "off",
     "no-plusplus": "off",
     "jsx-a11y/click-events-have-key-events": 0,
-    "react/jsx-boolean-value": false
+    "react/jsx-boolean-value": false,
+    "import/no-extraneous-dependencies": false
   }
 }

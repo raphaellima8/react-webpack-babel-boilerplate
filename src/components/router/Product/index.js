@@ -114,14 +114,12 @@ const DeliveryComponent = styled.div`
 `;
 
 class Product extends Component {
-  productId;
-
-  constructor({ location }) {
+  constructor(props) {
     super();
-    if (location.search) {
-      const splitedSearch = location.search.split('=');
+    if (props.match && props.match.params) {
+      const { productId } = props.match.params;
       this.state = {
-        productId: splitedSearch.pop(),
+        productId,
         cep: ''
       };
     }

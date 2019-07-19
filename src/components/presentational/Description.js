@@ -63,8 +63,7 @@ const Description = ({ data, dispatchFn }) => {
     <DescriptionContainer>
       <Link
         to={{
-          pathname: `/product/detail`,
-          search: `?productId=${productId}`
+          pathname: `/product/detail/${productId}`
         }}
         onClick={() => dispatchFn(selectedProduct(data))}
       >
